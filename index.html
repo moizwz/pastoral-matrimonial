@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastoral Matrimonial - Paróquia Sant'Anna e São Joaquim</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-dark: #00363C;
+            --primary: #004C54;
+            --primary-light: #1A6069;
+            --gold: #C5A059;
+            --gold-light: #E0C183;
+            --gold-subtle: #F7F3E9;
+            --bg-offwhite: #FAF9F6;
+            --text-dark: #2C3E50;
+            --text-muted: #5A6B7C;
+            --white: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 24px rgba(0, 76, 84, 0.08);
+            --shadow-lg: 0 12px 32px rgba(0, 76, 84, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-offwhite);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cinzel-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* BARRA SUPERIOR INSTITUCIONAL */
+        .top-bar {
+            background-color: var(--primary-dark);
+            color: var(--gold-light);
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .top-bar-info span {
+            margin-right: 20px;
+        }
+
+        .top-bar-info i {
+            color: var(--gold);
+            margin-right: 6px;
+        }
+
+        /* CABEÇALHO / NAVBAR */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--primary-dark);
+        }
+
+        .brand-logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .brand-title h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-title p {
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+            background-color: var(--gold-subtle);
+        }
+
+        /* HERO / SEÇÃO DE BOAS-VINDAS */
+        .hero {
+            background: linear-gradient(rgba(0, 54, 60, 0.88), rgba(0, 76, 84, 0.92)),
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 90px 20px;
+            position: relative;
+        }
+
+        .hero-decor {
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--primary-dark);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--gold-light);
+        }
+
+        /* SEÇÕES GERAIS */
+        .section {
+            padding: 70px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            width: 50px;
+            height: 1px;
+            background-color: var(--gold);
+        }
+
+        .divider i {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        /* DOCUMENTAÇÃO NECESSÁRIA */
+        .doc-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .doc-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--gold);
+        }
+
+        .doc-list {
+            list-style: none;
+        }
+
+        .doc-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .doc-list li i {
+            color: var(--gold);
+        }
+
+        /* PROGRESSO MATRIMONIAL */
+        .progress-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .progress-bar-container {
+            background-color: #EAEAEA;
+            border-radius: 20px;
+            height: 22px;
+            margin: 20px 0 30px;
+            overflow: hidden;
+            border: 1px solid var(--gold-light);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--gold) 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gold-subtle);
+            padding: 12px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .check-item:hover {
+            background: #F0E8D5;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* TAXAS E INFORMAÇÕES */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .info-table th {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: left;
+            padding: 15px 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .info-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* FORMULÁRIO EM ETAPAS */
+        .form-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            border-top: 4px solid var(--primary);
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .step-indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border-color);
+            z-index: 1;
+        }
+
+        .step {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 2;
+            color: var(--text-muted);
+        }
+
+        .step.active {
+            border-color: var(--gold);
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 76, 84, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .btn-secondary {
+            background: #E2E8F0;
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* UPLOAD / ENVIO DE DOCUMENTOS */
+        .upload-box {
+            border: 2px dashed var(--gold);
+            background: var(--gold-subtle);
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .upload-box i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 50px 20px 20px;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .footer-col p,
+        .footer-col li {
+            font-size: 0.9rem;
+            color: #D1D5DB;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: #9CA3AF;
+        }
+
+        /* BOTÃO WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-church"></i> Arquidiocese da Paraíba</span>
+            <span><i class="fa-solid fa-location-dot"></i> João Pessoa - PB</span>
+        </div>
+        <div>
+            <span><i class="fa-solid fa-clock"></i> Ter a Sáb: 13h - 18h | 14h - 18h</span>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid fa-hands-praying" style="font-size: 2rem; color: var(--primary);"></i>
+                <div class="brand-title">
+                    <h1 class="cinzel-font">Sant'Anna e São Joaquim</h1>
+                    <p>Pastoral Matrimonial</p>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#documentos" class="nav-link">Documentos</a></li>
+                <li><a href="#progresso" class="nav-link">Seu Progresso</a></li>
+                <li><a href="#taxas" class="nav-link">Taxas & Informações</a></li>
+                <li><a href="#inscricao" class="nav-link">Inscrição</a></li>
+                <li><a href="#envio" class="nav-link">Envio por E-mail</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <h2>O Matrimônio É Um Sacramento do Amor</h2>
+        <div class="hero-decor"></div>
+        <p>Seja bem-vindo ao portal da Pastoral Matrimonial da Paróquia Sant'Anna e São Joaquim. Acompanhamos os noivos
+            na preparação humana e espiritual para o Matrimônio Sagrado.</p>
+        <a href="#inscricao" class="btn-gold"><i class="fa-solid fa-pen-to-square"></i> Iniciar Inscrição do Casal</a>
+    </section>
+
+    <!-- DOCUMENTAÇÃO NECESSÁRIA -->
+    <section id="documentos" class="section">
+        <div class="section-header">
+            <h2>Documentação Necessária</h2>
+            <div class="divider"><i class="fa-solid fa-cross"></i></div>
+            <p>Confira os documentos exigidos para a abertura do processo canônico matrimonial</p>
+        </div>
+
+        <div class="doc-tabs">
+            <button class="tab-btn active" onclick="switchTab('solteiros')">Noivos Solteiros</button>
+            <button class="tab-btn" onclick="switchTab('casados-civil')">Já Casados no Civil</button>
+            <button class="tab-btn" onclick="switchTab('viuvos')">Viúvos</button>
+        </div>
+
+        <div class="doc-content">
+            <ul id="doc-list-content" class="doc-list">
+                <li><i class="fa-solid fa-circle-check"></i> Certidão de Nascimento dos noivos (Cópias);</li>
+                <li><i class="fa-solid fa-circle-check"></i> Rg e CPF dos Noivos;</li>
+                <li><i class="fa-solid fa-circle-check"></i> Comprovante de Residência atualizado (Cópias);</li>
+                <li><i class="fa-solid fa-circle-check"></i> Certificado do Curso de noivos (Original).</li>
+                <li><i class="fa-solid fa-circle-check"></i> Certificado dos Proclamas (Feito na Paróquia).</li>
+                <li><i class="fa-solid fa-circle-check"></i> Certificado dos Ploclamas Realizado em Outra Paróquia.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Atestado de Óbito (em Caso de viuvez);</li>
+                <li><i class="fa-solid fa-circle-check"></i> Batistério de Cada um (Solicitar na Paróquia de Batismo).
+                </li>
+                <li><i class="fa-solid fa-circle-check"></i> Dispensa/ Licença de Impedimento (Na Cúria/ Taxa :R$50,00).
+                </li>
+                <li><i class="fa-solid fa-circle-check"></i> Certidão de Contrato Civil (Do Cartório).</li>
+                <li><i class="fa-solid fa-circle-check"></i> Certidão de Habilitação Expedida pelo Oficial do Registro
+                    Civil.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Declaração do Padre que ira Assistir o Casamento.</li>
+            </ul>
+            <div style="margin-top: 20px; text-align: right;">
+                <button class="btn-secondary" onclick="alert('Iniciando o download do Guia em PDF...')">
+                    <i class="fa-solid fa-file-pdf"></i> Baixar Lista em PDF
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEU PROGRESSO MATRIMONIAL -->
+    <section id="progresso" class="section" style="background-color: var(--white); border-radius: 12px;">
+        <div class="section-header">
+            <h2>Seu Progresso Matrimonial</h2>
+            <div class="divider"><i class="fa-solid fa-heart"></i></div>
+            <p>Marque os passos já concluídos para acompanhar a preparação do seu casamento</p>
+        </div>
+
+        <div class="progress-card">
+            <h3>Etapas Concluídas: <span id="progress-percent">0%</span></h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div class="checklist">
+                <label class="check-item">
+                    <input type="checkbox" onchange="updateProgress()"> 1. Inscrição na Secretaria
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" onchange="updateProgress()"> 2. Entrega das Certidões de Batismo
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" onchange="updateProgress()"> 3. Participação no Curso de Noivos
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" onchange="updateProgress()"> 4. Entrevista com o Pároco
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" onchange="updateProgress()"> 5. Edital de Proclamas
+                </label>
+                <label class="check-item">
+                    <input type="checkbox" onchange="updateProgress()"> 6. Agendamento dos Músicos/Ornamentação
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAXAS E INFORMAÇÕES -->
+    <section id="taxas" class="section">
+        <div class="section-header">
+            <h2>Taxas & Informações Paroquiais</h2>
+            <div class="divider"><i class="fa-solid fa-circle-info"></i></div>
+            <p>Transparência sobre prazos, horários e contribuições de taxa de celebração</p>
+        </div>
+
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Item / Serviço</th>
+                    <th>Prazo Recomendado</th>
+                    <th>Observações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Abertura do Processo Canônico</strong></td>
+                    <td>Até 90 dias antes da data</td>
+                    <td>Atendimento na Secretaria Paroquial com certidões em mãos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Encontro de Noivos (Curso)</strong></td>
+                    <td>Até 60 dias antes</td>
+                    <td>Realizado em datas pré-definidas no calendário paroquial.</td>
+                </tr>
+                <tr>
+                    <td><strong>Taxa de Celebração Matrimonial</strong></td>
+                    <td>Consultar Secretaria</td>
+                    <td>Destinada à manutenção do templo e despesas com a cerimônia.</td>
+                </tr>
+                <tr>
+                    <td><strong>Transferência de Paróquia (se necessário)</strong></td>
+                    <td>Até 45 dias antes</td>
+                    <td>Caso o casamento ocorra fora do território da paróquia de residência.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- INSCRIÇÃO ONLINE -->
+    <section id="inscricao" class="section">
+        <div class="section-header">
+            <h2>Pré-Inscrição Online</h2>
+            <div class="divider"><i class="fa-solid fa-ring"></i></div>
+            <p>Preencha os dados abaixo para iniciar o pré-cadastro do casal</p>
+        </div>
+
+        <div class="form-container">
+            <div class="step-indicator">
+                <div class="step active" id="step-dot-1">1</div>
+                <div class="step" id="step-dot-2">2</div>
+                <div class="step" id="step-dot-3">3</div>
+            </div>
+
+            <form id="matrimonyForm">
+                <!-- ETAPA 1: NOIVO -->
+                <div class="form-step active" id="step-1">
+                    <h3><i class="fa-solid fa-user"></i> Dados do Noivo</h3>
+                    <br>
+                    <div class="form-group">
+                        <label>Nome Completo do Noivo</label>
+                        <input type="text" class="form-control" required placeholder="Digite o nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="tel" class="form-control" required placeholder="(83) 98888-8888">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control" required placeholder="noivo@email.com">
+                    </div>
+                    <div class="btn-group" style="justify-content: flex-end;">
+                        <button type="button" class="btn-gold" onclick="nextStep(2)">Próximo <i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- ETAPA 2: NOIVA -->
+                <div class="form-step" id="step-2">
+                    <h3><i class="fa-solid fa-user-nurse"></i> Dados da Noiva</h3>
+                    <br>
+                    <div class="form-group">
+                        <label>Nome Completo da Noiva</label>
+                        <input type="text" class="form-control" required placeholder="Digite o nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone / WhatsApp</label>
+                        <input type="tel" class="form-control" required placeholder="(83) 98888-8888">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control" required placeholder="noiva@email.com">
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn-secondary" onclick="nextStep(1)"><i
+                                class="fa-solid fa-arrow-left"></i> Voltar</button>
+                        <button type="button" class="btn-gold" onclick="nextStep(3)">Próximo <i
+                                class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- ETAPA 3: CERIMÔNIA -->
+                <div class="form-step" id="step-3">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Detalhes da Cerimônia</h3>
+                    <br>
+                    <div class="form-group">
+                        <label>Data Pretendida para o Casamento</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Local Desejado</label>
+                        <select class="form-control">
+                            <option>Matriz Sant'Anna e São Joaquim</option>
+                            <option>Capela / Comunidade Vinculada</option>
+                            <option>Outra Paróquia (Transferência)</option>
+                        </select>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn-secondary" onclick="nextStep(2)"><i
+                                class="fa-solid fa-arrow-left"></i> Voltar</button>
+                        <button type="submit" class="btn-gold"><i class="fa-solid fa-paper-plane"></i> Finalizar
+                            Pré-Inscrição</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ENVIO DE DOCUMENTOS -->
+    <section id="envio" class="section">
+        <div class="section-header">
+            <h2>Envio de Documentos via E-mail</h2>
+            <div class="divider"><i class="fa-solid fa-file-arrow-up"></i></div>
+            <p>Prepare a mensagem para encaminhar as cópias dos documentos diretamente para a secretaria paroquial</p>
+        </div>
+
+        <div class="form-container">
+            <form id="emailDocForm">
+                <div class="form-group">
+                    <label>Nome dos Noivos / Casal</label>
+                    <input type="text" id="emailNomeNoivos" class="form-control"
+                        placeholder="Ex: João Silva e Maria Santos" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefone para Contato</label>
+                    <input type="tel" id="emailTelefone" class="form-control" placeholder="(83) 98888-8888" required>
+                </div>
+
+                <div class="upload-box" onclick="document.getElementById('file-input').click()">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h4 id="upload-label">Clique aqui para anexar/selecionar os arquivos (PDF ou Imagens)</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Certidão de Batismo, RG, Comprovantes de
+                        Residência, etc.</p>
+                    <input type="file" id="file-input" style="display: none;" multiple
+                        onchange="mostrarArquivosSelecionados(this)">
+                </div>
+                <div id="lista-arquivos"
+                    style="margin-top: 10px; font-size: 0.9rem; color: var(--primary); font-weight: 600; text-align: center;">
+                </div>
+
+                <div style="margin-top: 25px; text-align: center;">
+                    <button type="button" class="btn-gold" onclick="enviarDocumentosPorEmail()">
+                        <i class="fa-solid fa-paper-plane"></i> Abrir E-mail para Enviar Documentos
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 class="cinzel-font">Paróquia Sant'Anna e São Joaquim</h4>
+                <p>Acompanhando e abençoando as famílias na fé em Cristo Jesus.</p>
+                <p><i class="fa-solid fa-location-dot"></i> João Pessoa - PB</p>
+            </div>
+            <div class="footer-col">
+                <h4>Pastoral Matrimonial</h4>
+                <ul style="list-style: none;">
+                    <li><a href="#documentos" style="color: #D1D5DB; text-decoration: none;">Documentos</a></li>
+                    <li><a href="#inscricao" style="color: #D1D5DB; text-decoration: none;">Pré-Inscrição</a></li>
+                    <li><a href="#taxas" style="color: #D1D5DB; text-decoration: none;">Calendário e Taxas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato Secretaria</h4>
+                <p><i class="fa-solid fa-phone"></i> (83) 3333-0000</p>
+                <p><i class="fa-solid fa-envelope"></i> matrimonial@paroquiasantannaesaojoaquim.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; MoisesHub © 2026 - Gestão Avançada de Sites.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5583999999999?text=Olá,%20gostaria%20de%20informações%20sobre%20o%20casamento%20na%20Paróquia"
+        class="whatsapp-float" target="_blank" title="Fale no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mudar abas de documentos
+        function switchTab(type) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const content = document.getElementById('doc-list-content');
+            if (type === 'solteiros') {
+                content.innerHTML = `
+                    <li><i class="fa-solid fa-circle-check"></i> Certidão de Batismo atualizada para fins matrimoniais (emitida nos últimos 6 meses).</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Comprovante do Curso de Noivos.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> RG e CPF de ambos os noivos.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Comprovante de residência atualizado.</li>
+                `;
+            } else if (type === 'casados-civil') {
+                content.innerHTML = `
+                    <li><i class="fa-solid fa-circle-check"></i> Certidão de Batismo atualizada para fins matrimoniais.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Certidão de Casamento Civil averbada.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Comprovante do Curso de Noivos.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Documentos de identificação (RG / CPF).</li>
+                `;
+            } else if (type === 'viuvos') {
+                content.innerHTML = `
+                    <li><i class="fa-solid fa-circle-check"></i> Certidão de Batismo recente.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Certidão de Óbito do cônjuge falecido.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Certidão do Casamento Religioso anterior.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Comprovante do Encontro de Noivos.</li>
+                `;
+            }
+        }
+
+        // Progresso do Casal
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+            let checkedCount = 0;
+            checkboxes.forEach(cb => { if (cb.checked) checkedCount++; });
+            const percentage = Math.round((checkedCount / checkboxes.length) * 100);
+
+            const progressBar = document.getElementById('progress-bar');
+            progressBar.style.width = percentage + '%';
+            progressBar.innerText = percentage > 0 ? percentage + '%' : '';
+            document.getElementById('progress-percent').innerText = percentage + '%';
+        }
+
+        // Form Multi-Etapas
+        function nextStep(stepNumber) {
+            document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+            document.querySelectorAll('.step').forEach(dot => dot.classList.remove('active'));
+
+            document.getElementById('step-' + stepNumber).classList.add('active');
+            for (let i = 1; i <= stepNumber; i++) {
+                document.getElementById('step-dot-' + i).classList.add('active');
+            }
+        }
+
+        document.getElementById('matrimonyForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Pré-Inscrição enviada com sucesso! A Pastoral Matrimonial entrará em contato em breve.');
+        });
+
+        // Mostrar o nome dos arquivos selecionados pelo usuário
+function mostrarArquivosSelecionados(input) {
+    const container = document.getElementById('lista-arquivos');
+    if (input.files.length > 0) {
+        let nomes = [];
+        for (let i = 0; i < input.files.length; i++) {
+            nomes.push(input.files[i].name);
+        }
+        container.innerHTML = '<i class="fa-solid fa-paperclip"></i> Arquivos selecionados: ' + nomes.join(', ');
+    } else {
+        container.innerHTML = '';
+    }
+}
+
+// Ação do Botão Enviar por E-mail
+function enviarDocumentosPorEmail() {
+    const nomeNoivos = document.getElementById('emailNomeNoivos').value.trim();
+    const telefone = document.getElementById('emailTelefone').value.trim();
+    const emailDestino = "matrimonial@paroquiasantannaesaojoaquim.org"; // Substitua pelo e-mail real da secretaria
+
+    if (!nomeNoivos || !telefone) {
+        alert('Por favor, preencha o Nome dos Noivos e o Telefone antes de enviar.');
+        return;
+    }
+
+    const assunto = encodeURIComponent(`Documentos de Casamento - ${nomeNoivos}`);
+    const corpo = encodeURIComponent(
+        `Olá, Secretaria da Paróquia Sant'Anna e São Joaquim!\n\n` +
+        `Seguem em anexo os documentos para o processo matrimonial.\n\n` +
+        `• Casal: ${nomeNoivos}\n` +
+        `• Telefone de Contato: ${telefone}\n\n` +
+        `* Por favor, lembre-se de anexar os arquivos selecionados nesta mensagem de e-mail antes de enviar.`
+    );
+
+    // Abre o aplicativo de e-mail padrão do usuário já com destinatário, assunto e corpo preenchidos
+    window.location.href = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
+}
+    </script>
+</body>
+
+</html>
