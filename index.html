@@ -585,12 +585,15 @@
     <!-- CABEÇALHO -->
     <header>
         <div class="nav-container">
-            <a href="#" class="brand-logo">
-                <i class="fa-solid fa-hands-praying" style="font-size: 2rem; color: var(--primary);"></i>
-                <div class="brand-title">
-                    <h1 class="cinzel-font">Sant'Anna e São Joaquim</h1>
-                    <p>Pastoral Matrimonial</p>
-                </div>
+            <a href="#" class="brand-logo"></a>
+            <!-- Imagem do brasão da paróquia -->
+            <img src="logo.jpg" alt="Brasão Paróquia Sant'Anna e São Joaquim"
+                style="width: 55px; height: 55px; object-fit: contain;">
+
+            <div class="brand-title">
+                <h1 class="cinzel-font">Sant'Anna e São Joaquim</h1>
+                <p>Pastoral Matrimonial</p>
+            </div>
             </a>
             <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-link active">Início</a></li>
@@ -956,42 +959,42 @@
         });
 
         // Mostrar o nome dos arquivos selecionados pelo usuário
-function mostrarArquivosSelecionados(input) {
-    const container = document.getElementById('lista-arquivos');
-    if (input.files.length > 0) {
-        let nomes = [];
-        for (let i = 0; i < input.files.length; i++) {
-            nomes.push(input.files[i].name);
+        function mostrarArquivosSelecionados(input) {
+            const container = document.getElementById('lista-arquivos');
+            if (input.files.length > 0) {
+                let nomes = [];
+                for (let i = 0; i < input.files.length; i++) {
+                    nomes.push(input.files[i].name);
+                }
+                container.innerHTML = '<i class="fa-solid fa-paperclip"></i> Arquivos selecionados: ' + nomes.join(', ');
+            } else {
+                container.innerHTML = '';
+            }
         }
-        container.innerHTML = '<i class="fa-solid fa-paperclip"></i> Arquivos selecionados: ' + nomes.join(', ');
-    } else {
-        container.innerHTML = '';
-    }
-}
 
-// Ação do Botão Enviar por E-mail
-function enviarDocumentosPorEmail() {
-    const nomeNoivos = document.getElementById('emailNomeNoivos').value.trim();
-    const telefone = document.getElementById('emailTelefone').value.trim();
-    const emailDestino = "matrimonial@paroquiasantannaesaojoaquim.org"; // Substitua pelo e-mail real da secretaria
+        // Ação do Botão Enviar por E-mail
+        function enviarDocumentosPorEmail() {
+            const nomeNoivos = document.getElementById('emailNomeNoivos').value.trim();
+            const telefone = document.getElementById('emailTelefone').value.trim();
+            const emailDestino = "matrimonial@paroquiasantannaesaojoaquim.org"; // Substitua pelo e-mail real da secretaria
 
-    if (!nomeNoivos || !telefone) {
-        alert('Por favor, preencha o Nome dos Noivos e o Telefone antes de enviar.');
-        return;
-    }
+            if (!nomeNoivos || !telefone) {
+                alert('Por favor, preencha o Nome dos Noivos e o Telefone antes de enviar.');
+                return;
+            }
 
-    const assunto = encodeURIComponent(`Documentos de Casamento - ${nomeNoivos}`);
-    const corpo = encodeURIComponent(
-        `Olá, Secretaria da Paróquia Sant'Anna e São Joaquim!\n\n` +
-        `Seguem em anexo os documentos para o processo matrimonial.\n\n` +
-        `• Casal: ${nomeNoivos}\n` +
-        `• Telefone de Contato: ${telefone}\n\n` +
-        `* Por favor, lembre-se de anexar os arquivos selecionados nesta mensagem de e-mail antes de enviar.`
-    );
+            const assunto = encodeURIComponent(`Documentos de Casamento - ${nomeNoivos}`);
+            const corpo = encodeURIComponent(
+                `Olá, Secretaria da Paróquia Sant'Anna e São Joaquim!\n\n` +
+                `Seguem em anexo os documentos para o processo matrimonial.\n\n` +
+                `• Casal: ${nomeNoivos}\n` +
+                `• Telefone de Contato: ${telefone}\n\n` +
+                `* Por favor, lembre-se de anexar os arquivos selecionados nesta mensagem de e-mail antes de enviar.`
+            );
 
-    // Abre o aplicativo de e-mail padrão do usuário já com destinatário, assunto e corpo preenchidos
-    window.location.href = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
-}
+            // Abre o aplicativo de e-mail padrão do usuário já com destinatário, assunto e corpo preenchidos
+            window.location.href = `mailto:${emailDestino}?subject=${assunto}&body=${corpo}`;
+        }
     </script>
 </body>
 
